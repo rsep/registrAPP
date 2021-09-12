@@ -11,3 +11,9 @@ Caso Semestral para el ramo PGY4121 / primavera 2021
 ```
 npm install @ionic/app-scripts@latest --save-dev
 ```
+
+Crear pages anidadas en carpeta
+```
+ionic g page nombreCarpeta/nombrePagina
+ionic g page pages/login
+```
