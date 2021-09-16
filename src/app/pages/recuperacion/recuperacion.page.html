@@ -1,14 +1,55 @@
-<!-- Recuperar Contraseña
-label + input: correo electronico
-boton: enviar
-toast: mensaje enviado, revisa tu bandeja
- -->
-<ion-header>
-  <ion-toolbar>
-    <ion-title>Recupera tu Contraseña</ion-title>
-  </ion-toolbar>
-</ion-header>
+<ion-content fullscreen=true class="bg">
 
-<ion-content>
+  <ion-card class="card">
 
+    <ion-header class="ion-no-border">
+      <ion-toolbar>
+        <ion-img class="duoc" src="../assets/img/logo_duoc_blanco.png"></ion-img>
+        <!-- <ion-title class="ion-text-start header-title">DuocUC</ion-title> -->
+      </ion-toolbar>
+    </ion-header>
+
+    <ion-card-header>
+      <ion-img class="logo" src="../assets/img/logo_registrapp.png"></ion-img>
+      <!-- <ion-label class="title">
+        <h6>Tu aplicación de registro de asistencia</h6>
+      </ion-label> -->
+    </ion-card-header>
+
+    <ion-card-content>
+      <form #formulario="ngForm" (ngSubmit)="onSubmitTemplate()">
+        <ion-item class="inp">
+          <ion-input type="email"
+                     name="mail"
+                     pattern="^([a-zA-Z0-9_\-\.]+)@([a-zA-Z0-9_\-\.]+)\.([a-zA-Z]{2,5})$"
+                     [(ngModel)]="user.mail"
+                     required
+                     placeholder="Email">
+          </ion-input>
+        </ion-item>
+      </form>
+
+      <div class="text-box">
+        <p>
+          Ingresa tu correo electrónico para
+          para recuperar tu contraseña, te
+          será enviado un mail de verificación.
+        </p>
+      </div>
+
+      <ion-card-content class="ion-text-center botones">
+
+        <!-- BOTON SESION -->
+        <ion-button class="login" [disabled]="formulario.invalid" shape="block" fill="solid" shape="round" (click)="send()">
+          Recuperar contraseña
+        </ion-button>
+        <!-- BOTON VOLVER -->
+        <ion-button class="back" shape="block" fill="outline" shape="round" (click)="back()">
+          Volver
+        </ion-button>
+      </ion-card-content>
+
+    </ion-card-content>
+
+  </ion-card>
 </ion-content>

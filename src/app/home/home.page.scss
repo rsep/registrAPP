@@ -25,3 +25,84 @@
 #container a {
   text-decoration: none;
 }
+
+// ****************************************
+// ROSI
+// ****************************************
+
+ion-toolbar{
+  --background: transparent;
+  --ion-color-base: transparent !important;
+  padding-top: 0 !important;
+}
+
+ion-content{
+  --background: #23c774;
+  --overflow: hidden; // para esconder scroll
+}
+
+ion-button.burguer{
+  --box-shadow: none;
+  margin-right: 0.5em;
+  margin-top: 2em;
+  border-radius: 4em;
+}
+
+ion-fab-button{
+  --background: transparent !important;
+  --box-shadow: none;
+  --background-activated: transparent !important;
+  --background-hover: transparent !important; //ios
+}
+
+ion-icon{
+  color: white;
+}
+
+.duoc{
+  // height: 1em;
+  // float: left;
+  // padding-left: 1.5em;
+  // margin-top: .5em !important;
+  width: 5em;
+  margin-left: 1em ;
+}
+
+ion-img.logo{
+  // height: 7em;
+  margin-top: 1em;
+  margin-bottom: 2em;
+}
+
+.card {
+  // float: unset !important;
+  background: transparent;
+  box-shadow:none !important // disable shadow
+}
+
+.title, .text-box{
+  color: white;
+  text-align: center;
+  margin-top: 2em;
+  margin-bottom: 2em;
+}
+
+p{
+  font-weight: 100;
+}
+
+ion-button{
+  width: 10em;
+  height: 3em;
+  margin: 0 auto 4em auto;
+  color: white;
+  --border-color: white;
+  --border-width: 3px;
+  --background-hover: #6ad39f; // ios
+  --background-activated: #6ad39f; //ios
+}
+
+ion-button:hover{
+  --background: #6ad39f; // android
+  color: white;
+}
