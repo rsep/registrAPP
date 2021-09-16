@@ -1,0 +1,104 @@
+ion-toolbar{
+    --background: transparent;
+    --ion-color-base: transparent !important;
+    padding-top: 0 !important;
+}
+
+// ion-content.bg{
+//     --background: url("../../../assets/img/stud2.jpg") no-repeat 40% center / cover;
+// }
+
+ion-content.bg{
+    --background: none;
+    background-image: url("../../../assets/img/fondo_sin_opacidad.jpg") ;
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+ion-content{
+    --overflow: hidden; // para esconder scroll
+}
+
+ion-card-content{
+    padding-left: .6em !important;
+    padding-right: .6em !important;
+}
+
+.duoc{
+    // height: 1em;
+    // float: left;
+    // padding-left: 1.5em;
+    // margin-top: .5em !important;
+    width: 5em;
+    margin-left: 1em ;
+}
+
+.header-title{
+    padding-left: 1em;
+}
+
+ion-img.logo{
+    // height: 7em;
+    margin-top: 1em;
+    margin-bottom: 2em;
+}
+
+.title{
+    color: white;
+    text-align: center;
+    margin-top: 2em;
+    margin-bottom: 2em;
+}
+
+.card {     
+    // float: unset !important;
+    background: transparent;
+    box-shadow:none !important
+}
+
+.inp{
+    border-radius: 8px;
+    margin-top: 1em;
+    margin-bottom: 2em;
+}
+
+.text-box{
+    color: #1c975a;
+    text-align: center;
+    margin-top: 2em;
+    margin-bottom: 1.5em;
+    font-weight: bold;
+}
+
+ion-button{
+    // --background: #23c774;
+    margin-bottom: .5em;
+    // color: #fff;
+    height: 2.5em;
+    // --background-hover: #6ad39f; // ios
+    text-transform: capitalize;
+    --border-shadow:
+}
+
+.login{
+    --background: #23c774;
+    color: #fff;
+    // height: 2em;
+    --background-hover: #6ad39f; // ios
+    --background-activated: #23c774; //ios
+}
+
+.back{
+    color: #23c774;
+    font-weight: bold;
+    --border-color: #23c774;
+    --border-width: 3.5px;
+}
+
+
+ion-button:hover{
+    --background: #6ad39f; // android
+    color: white;
+}
+
