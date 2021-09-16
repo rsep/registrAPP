@@ -1,0 +1,38 @@
+.topQr{
+    background-color: #23c774;
+}
+
+a {
+    color: #fff;
+}
+.cancel{
+    font-size: 11px;
+    text-align: center;
+    cursor: pointer;
+}
+.topCom{
+    font-size: 12px;
+}
+
+.container {
+    padding-top: 20%;
+    display: flex;
+    justify-content: center;
+    align-content: center;
+}
+
+.foot {
+    padding: 20px 10% 20px 10%;
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    text-align: center;
+    background-color:#23c774 ;
+    color: #fff;
+    font-size: 13px;
+}
+
+ion-toolbar{
+    --background: #23c774 !important;
+    color: #fff
+}

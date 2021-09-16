@@ -28,7 +28,7 @@ export class HomePage {
 
   // Verificar ruta al nombre de la página que lee escaner
   scan(){
-    this.router.navigate(['/login'])
+    this.router.navigate(['/qr'])
   }
 
   logout(){
