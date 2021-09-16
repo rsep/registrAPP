@@ -1,0 +1,28 @@
+<ion-header >
+  <ion-toolbar [color]="dynamicColor">
+    <ion-grid>
+      <ion-row>
+        <ion-col>
+          <a class="cancel" (click)="atras()">Cancelar</a>
+        </ion-col>
+        <ion-col size="6">
+          <p class="topCom">Escanea tu codigo QR</p>
+        </ion-col>
+        <ion-col></ion-col>
+      </ion-row>
+    </ion-grid>
+    
+    
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <div class="container">
+    <img src="./assets/img/qr.png" (click)="presentLoading()">
+  </div>
+</ion-content>
+<ion-footer>
+  <div class="foot">
+    <p>No puedes escanear el código? Cierra y reinicia la aplicacion.</p>
+  </div>
+</ion-footer>

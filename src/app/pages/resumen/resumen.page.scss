@@ -1,0 +1,51 @@
+ion-toolbar{
+    --background: #23c774;
+    --border-color: transparent;
+}
+
+.burguer{
+    --background: #23c774 !important;
+    --box-shadow: none;
+    margin-right: 0.5em;
+}
+
+.logo{
+    width: 5em;
+    margin-left: 1em ;
+}
+ion-content{
+    --background:#23c774;
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    
+}
+ion-content h3{
+    text-align: center;
+    color: #fff;
+    font-weight: bold;
+}
+.logoapp{
+    padding: 3em ;
+}
+ul{
+    list-style: none;
+}
+li{
+    color: #fff;
+    font-size: 12px;
+    font-weight: bold;
+}
+.lebuton{
+    display: flex;
+    justify-content: center;
+    align-content: center;
+}
+.sig {
+    width: 200px;
+    border-radius: 20px;
+    border: 2px solid;
+    border-color: #fff;
+    background-color: transparent;
+    color: #fff;
+  }

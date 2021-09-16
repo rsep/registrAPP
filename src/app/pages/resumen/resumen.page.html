@@ -1,0 +1,36 @@
+<ion-header class="ion-no-border">
+  <ion-toolbar>
+    <ion-img src="./assets/img/logo_duoc_blanco.png" slot="start" class="logo"></ion-img>
+        
+    <ion-button (click)="showAlert()" class="burguer" slot="end"> 
+      <ion-icon name="power"></ion-icon> 
+    </ion-button>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <div><img src="./assets/img/logo_solo.png" class="logoapp"></div>
+  <div><h3>Resumen</h3></div>
+  <div>
+    <ul>
+      <li>Nombre: Usuario_1 </li>
+      <li>Apellido: Ap_usuario_1</li>
+      <li>Carrera: Ing. Informatica</li>
+      <br>
+      <li>Asignatura: PGY4121</li>
+      <li>Sección: 007D</li>
+      <li>Fecha: 22/09/21</li>
+      <li>Hora: 14:01</li>
+      <br>
+      <li>Asistencia: Presente</li>
+    </ul>
+  </div>
+  <br>
+  <div class="lebuton">
+    <button mat-flat-button class="sig" (click)="volver()">Volver</button>
+  </div>
+  
+</ion-content>
+
+
+

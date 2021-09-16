@@ -18,7 +18,15 @@ const routes: Routes = [
   {
     path: 'recuperacion',
     loadChildren: () => import('./pages/recuperacion/recuperacion.module').then( m => m.RecuperacionPageModule)
+  },  {
+    path: 'qr',
+    loadChildren: () => import('./pages/qr/qr.module').then( m => m.QRPageModule)
   },
+  {
+    path: 'resumen',
+    loadChildren: () => import('./pages/resumen/resumen.module').then( m => m.ResumenPageModule)
+  },
+
 
 ];
 
