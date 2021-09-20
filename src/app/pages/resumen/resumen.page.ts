@@ -9,6 +9,8 @@ import { AlertController } from '@ionic/angular';
 })
 export class ResumenPage implements OnInit {
 
+  today= Date.now();
+
   constructor(private router: Router, private alertCtrl: AlertController) { }
 
   logout(){
