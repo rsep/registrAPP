@@ -9,6 +9,9 @@ import { ResumenPageRoutingModule } from './resumen-routing.module';
 import { ResumenPage } from './resumen.page';
 import {MatButtonModule} from '@angular/material/button';
 
+// importacion component
+import { HeaderComponent } from 'src/app/components/header/header.component';
+
 @NgModule({
   imports: [
     CommonModule,
@@ -17,6 +20,7 @@ import {MatButtonModule} from '@angular/material/button';
     ResumenPageRoutingModule,
     MatButtonModule
   ],
-  declarations: [ResumenPage]
+  declarations: [ResumenPage, HeaderComponent] 
+  // En declarations se agrega el component
 })
 export class ResumenPageModule {}

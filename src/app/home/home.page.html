@@ -1,40 +1,25 @@
-<ion-content [fullscreen]="true">
+<ion-header class="ion-no-border">
+  <!-- invocación al component -->
+  <app-header></app-header>
+</ion-header>
 
-  <ion-fab horizontal="end" vertical="top">
-    <ion-fab-button size="small" (click)="showAlert()" class="burguer" shape="round"> 
-      <ion-icon name="power"></ion-icon> 
-    </ion-fab-button>
-  </ion-fab>
 
-  <ion-card class="card">
-
-    <ion-header class="ion-no-border">
-      <ion-toolbar>
-
-        <ion-img class="duoc" src="../assets/img/logo_duoc_blanco.png"></ion-img>
-
-        </ion-toolbar>
-    </ion-header>
-
-    <ion-img class="logo" src="../assets/img/logo_solo.png"></ion-img>
-    <ion-card-title class="title">
-      <ion-label>
+  <ion-content>
+    <div><img src="../assets/img/logo_solo.png" class="logoapp"></div>
+  <div>
         <h1 style="text-transform: capitalize;">¡Hola! {{ user.nombre || 'Usuario_x'}}</h1>
-      </ion-label>
-    </ion-card-title>
-    <ion-card-content class="text-box">
+    <div>
       <p>
         Para confirmar tu asistencia
         presiona el botón de escanear y
         escanea el código QR entregado por tu docente.
       </p>
-    </ion-card-content>
-  </ion-card>
-
-</ion-content>
+    </div>
+  </div>
 
 <!-- BOTON / Funcion scan() para pasar a page scanner.-->
 <ion-button shape="round" fill="outline" (click)="scan()">
   Escanear
 </ion-button>
 
+</ion-content>

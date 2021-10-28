@@ -3,6 +3,10 @@ import { MenuController } from '@ionic/angular';
 import { ActivatedRoute, Router } from '@angular/router';
 import { AlertController } from '@ionic/angular';
 
+// importar servicio de la Base de Datos de usuarios
+import { DataService } from 'src/app/services/data.service';
+import { Datos } from '../interfaces/usuarios';
+
 @Component({
   selector: 'app-home',
   templateUrl: 'home.page.html',
@@ -17,7 +21,7 @@ export class HomePage {
   }
   
   // constructor() {}
-  constructor(private alertCtrl: AlertController, private menu: MenuController, private activeRoute: ActivatedRoute, private router: Router) {
+  constructor(private dataService: DataService, private alertCtrl: AlertController, private menu: MenuController, private activeRoute: ActivatedRoute, private router: Router) {
     this.activeRoute.queryParams.subscribe(params=>{
       if(this.router.getCurrentNavigation().extras.state){
         this.user.nombre=this.router.getCurrentNavigation().extras.state.user;
@@ -32,6 +36,10 @@ export class HomePage {
   }
 
   logout(){
+    // this.dataService.desactivarUser(this.user.nombre);
+    // this.dataService.estadoUsuario[0].user = "";
+    // this.dataService.estadoUsuario[0].estado = 0;
+    // console.log(this.dataService.estado);
     this.router.navigate(['/login'])
   }
 
