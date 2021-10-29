@@ -1,0 +1,102 @@
+{
+  "asistencia": [
+    {
+      "id": 1,
+      "userId": 1,
+      "ramo": {
+        "sigla": "PGY4121",
+        "seccion": "007D"
+      },
+      "fecha": "21/10/2021",
+      "hora": "11:15"
+    },
+    {
+      "id": 2,
+      "userId": 1,
+      "ramo": {
+        "sigla": "PGY4121",
+        "seccion": "007D"
+      },
+      "fecha": "22/10/2021",
+      "hora": "11:15"
+    },
+    {
+      "id": 3,
+      "userId": 1,
+      "ramo": {
+        "sigla": "PGY4121",
+        "seccion": "007D"
+      },
+      "fecha": "23/10/2021",
+      "hora": "11:15"
+    },
+    {
+      "id": 4,
+      "userId": 2,
+      "ramo": {
+        "sigla": "PGY4121",
+        "seccion": "007D"
+      },
+      "fecha": "23/10/2021",
+      "hora": "11:15"
+    },
+    {
+      "id": 5,
+      "userId": 2,
+      "ramo": {
+        "sigla": "PGY4121",
+        "seccion": "007D"
+      },
+      "fecha": "24/10/2021",
+      "hora": "11:20"
+    },
+    {
+      "ramo": {
+        "sigla": "PGY4121",
+        "seccion": "007D"
+      },
+      "fecha": "Thu Oct 28 2021",
+      "hora": "22:25:50 GMT-0300 (hora de verano de Chile)",
+      "userId": 1,
+      "id": 6
+    },
+    {
+      "ramo": {
+        "sigla": "PGY4121",
+        "seccion": "007D"
+      },
+      "fecha": "Thu Oct 28 2021",
+      "hora": "22:35:45 GMT-0300 (hora de verano de Chile)",
+      "userId": 1,
+      "id": 7
+    },
+    {
+      "ramo": {
+        "sigla": "PGY4121",
+        "seccion": "007D"
+      },
+      "fecha": "Thu Oct 28 2021",
+      "hora": "22:59:31 GMT-0300 (hora de verano de Chile)",
+      "userId": 2,
+      "id": 8
+    }
+  ],
+  "users": [
+    {
+      "id": 1,
+      "user": "cm.flores",
+      "password": "0000",
+      "nombre": "Camilo Flores",
+      "mail": "cm.flores@duocuc.cl",
+      "carrera": "Ing. Informática"
+    },
+    {
+      "id": 2,
+      "user": "rosa.sepulveda",
+      "password": "1111",
+      "nombre": "Rosario Sepúlveda",
+      "mail": "rosa.sepulveda@duocuc.cl",
+      "carrera": "Ing. Informática"
+    }
+  ]
+}

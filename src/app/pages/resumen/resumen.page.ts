@@ -1,6 +1,11 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { AlertController } from '@ionic/angular';
+import { ToastController } from '@ionic/angular';
+import { IAttend } from 'src/app/interfaces/iattend';
+import { IUsers } from 'src/app/interfaces/iusers';
+import { AttendRecordService } from 'src/app/services/attend-record.service';
+import { AuthService } from 'src/app/services/auth.service';
 
 @Component({
   selector: 'app-resumen',
@@ -8,11 +13,28 @@ import { AlertController } from '@ionic/angular';
   styleUrls: ['./resumen.page.scss'],
 })
 export class ResumenPage implements OnInit {
+  
+  today = Date.now();
 
-  today= Date.now();
+  user: Partial<IUsers>={ };
+  asistencia: Partial <IAttend> = {
+    ramo: {
+        sigla: "PGY4121",
+        seccion: "007D"
+    },
+    fecha: new Date().toDateString(),
+    hora: new Date().toTimeString()
+  };
 
-  constructor(private router: Router, private alertCtrl: AlertController) { }
+  
 
+
+  constructor(private router: Router, private alertCtrl: AlertController, 
+    public toastController: ToastController, private api: AttendRecordService, 
+    private authService:AuthService) {
+      this.user = this.authService.currentUser;
+     }
+//ya esta en components
   logout(){
     this.router.navigate(['/login']);
   }
@@ -24,14 +46,42 @@ export class ResumenPage implements OnInit {
     this.router.navigate(['/qr']);
   }
 
+  Record(){
+    this.router.navigate(['/historial']);
+  }
+
+  confirmAttend(){
+    if (this.asistencia.id==null){
+      this.asistencia.userId = this.user?.id;
+      this.api.createRecord(this.asistencia).subscribe(
+        ()=>{
+          this.presentToast("Asistencia confirmada!!")
+          this.asistencia.id=1;
+          return;
+        },
+        error=>{
+          this.presentToast("Error - " + error)
+        }
+      );
+    }else {
+      this.presentToast("Ya se encuentra presente")
+    }
+  }
+  //ya esta en components
     async showAlert(){
       const alert = await this.alertCtrl.create({
         header:'Cerrar Sesión',
         message:'¿Quieres cerrar sesión?',
         buttons:[{text:'OK', handler: ()=>{this.logout()}},'Cancelar']
       });
-      await alert.present();
-
-      
+      await alert.present(); 
     };
+
+    async presentToast(msg:string) {
+      const toast = await this.toastController.create({
+        message: msg,
+        duration: 2000
+      });
+      toast.present();
+    }
 }

@@ -1,11 +1,5 @@
 <ion-header class="ion-no-border">
-  <ion-toolbar>
-    <ion-img src="./assets/img/logo_duoc_blanco.png" slot="start" class="logo"></ion-img>
-        
-    <ion-button (click)="showAlert()" class="burguer" slot="end"> 
-      <ion-icon name="power"></ion-icon> 
-    </ion-button>
-  </ion-toolbar>
+  <app-header></app-header>
 </ion-header>
 
 <ion-content>
@@ -13,17 +7,23 @@
   <div><h3>Resumen</h3></div>
   <div>
     <ul>
-      <li>Nombre: Usuario_1 </li>
-      <li>Apellido: Ap_usuario_1</li>
-      <li>Carrera: Ing. Informatica</li>
+      <li>Usuario: {{user.user}} </li>
+      <li>Nombre: {{user.nombre}} </li>
+      <li>Carrera: {{user.carrera}}</li>
       <br>
-      <li>Asignatura: PGY4121</li>
-      <li>Sección: 007D</li>
+      <li>Asignatura: {{asistencia.ramo.sigla}}</li>
+      <li>Sección: {{asistencia.ramo.seccion}}</li>
       <li>Fecha: {{today | date: 'dd/MM/yyyy'}}</li>
-      <li>Hora: {{ today | date: 'HH:mm' }}</li>
-      <br>
-      <li>Asistencia: Presente</li>
+      <!--<li>Hora: {{today | date: 'HH:mm'}}</li>-->
     </ul>
+  </div>
+  <br>
+  <div class="lebuton">
+    <button mat-flat-button class="sig" (click)="confirmAttend()">Confirmar asistencia</button>
+  </div>
+  <br>
+  <div class="lebuton">
+    <button mat-flat-button class="sig" (click)="Record()">Historial</button>
   </div>
   <br>
   <div class="lebuton">
