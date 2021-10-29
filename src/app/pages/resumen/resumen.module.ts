@@ -10,9 +10,6 @@ import { ResumenPage } from './resumen.page';
 import {MatButtonModule} from '@angular/material/button';
 import { HeaderComponent } from 'src/app/components/header/header.component';
 
-// importacion component
-import { HeaderComponent } from 'src/app/components/header/header.component';
-
 @NgModule({
   imports: [
     CommonModule,
