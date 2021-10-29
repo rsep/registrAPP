@@ -2,6 +2,8 @@ import { Component } from '@angular/core';
 import { MenuController } from '@ionic/angular';
 import { ActivatedRoute, Router } from '@angular/router';
 import { AlertController } from '@ionic/angular';
+import { AuthService } from '../services/auth.service';
+import { IUsers } from '../interfaces/iusers';
 
 @Component({
   selector: 'app-home',
@@ -10,20 +12,11 @@ import { AlertController } from '@ionic/angular';
 })
 export class HomePage {
   
-  user={
-    nombre: '',
-    password: '',
-    mail: ''
-  }
+  user: IUsers;
   
-  // constructor() {}
-  constructor(private alertCtrl: AlertController, private menu: MenuController, private activeRoute: ActivatedRoute, private router: Router) {
-    this.activeRoute.queryParams.subscribe(params=>{
-      if(this.router.getCurrentNavigation().extras.state){
-        this.user.nombre=this.router.getCurrentNavigation().extras.state.user;
-        console.log(this.user.nombre)
-      }
-    });
+  constructor(private alertCtrl: AlertController, private menu: MenuController, 
+    private router: Router, private authService: AuthService) {
+    this.user=authService.currentUser;
   }
 
   // Verificar ruta al nombre de la página que lee escaner

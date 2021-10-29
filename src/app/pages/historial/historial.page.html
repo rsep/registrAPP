@@ -1,0 +1,35 @@
+<ion-header class="ion-no-border">
+  <ion-toolbar>
+    <ion-img src="./assets/img/logo_duoc_blanco.png" slot="start" class="logo"></ion-img>
+        
+    <ion-button (click)="showAlert()" class="burguer" slot="end"> 
+      <ion-icon name="power"></ion-icon> 
+    </ion-button>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-card>
+    <ion-list-header>
+      <ion-title>Historial de asistencia</ion-title>
+    </ion-list-header>  
+    <ion-list>  
+      <ion-item *ngFor="let asi of asistencias">
+        <ion-label>
+          <h4>{{ user.nombre }}</h4>
+          <h4>{{ user.carrera }}</h4>
+        </ion-label>
+        <ion-label>
+          <h4>{{ asi.ramo.sigla }}</h4>
+          <h5>{{ asi.ramo.seccion }}</h5>
+          <h5>{{ asi.fecha }}</h5>
+          <h5>{{ asi.hora }}</h5>
+        </ion-label>
+      </ion-item>
+    </ion-list>
+  </ion-card>
+  <div class="lebuton">
+    <button mat-flat-button class="sig" (click)="volver()">Volver</button>
+  </div>
+  <br>
+</ion-content>
