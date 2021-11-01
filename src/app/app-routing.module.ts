@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { PreloadAllModules, RouterModule, Routes } from '@angular/router';
+import { AuthGuardLoginService } from './services/auth-guard-login.service';
 
 import { AuthGuardService } from './services/auth-guard.service';
 
@@ -20,7 +21,8 @@ const routes: Routes = [
   {
     path: 'login',
 
-    loadChildren: () => import('./pages/login/login.module').then( m => m.LoginPageModule)
+    loadChildren: () => import('./pages/login/login.module').then( m => m.LoginPageModule),
+    canActivate:[AuthGuardLoginService]
   },
   {
     path: 'recuperacion',
@@ -46,6 +48,7 @@ const routes: Routes = [
     loadChildren: () => import('./pages/historial/historial.module').then( m => m.HistorialPageModule),
     canActivate:[AuthGuardService]
   },
+
 
 
 ];

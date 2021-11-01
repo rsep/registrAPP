@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { AlertController } from '@ionic/angular';
+import { AuthService } from 'src/app/services/auth.service';
 
 @Component({
   selector: 'app-header',
@@ -10,12 +11,14 @@ import { AlertController } from '@ionic/angular';
 export class HeaderComponent implements OnInit {
 
 
-  constructor(private router: Router, private alertCtrl:AlertController) { }
+  constructor(private router: Router, private alertCtrl:AlertController, private authService: AuthService) { }
 
   ngOnInit() {}
 
 
   logout(){
+    let status = {'estado':0, 'user': ""};
+    localStorage.setItem("log",JSON.stringify(status));
     this.router.navigate(['/login']);
   }
 
