@@ -1,0 +1,42 @@
+ion-toolbar{
+    --background: #23c774;
+    --border-color: transparent;
+}
+
+ion-content{
+    --background:#23c774;
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    
+}
+
+h1{
+    padding-top: 4em;
+    margin-bottom: auto;
+    font-size: 20pt;
+    color: whitesmoke;
+}
+
+div{
+    margin-bottom: auto;
+}
+
+ion-button{
+    width: 10em;
+    height: 3em;
+    margin: auto auto 4em auto;
+    color: white;
+    --border-color: white;
+    --border-width: 2px;
+    --background-hover: #6ad39f; // ios
+    --background-activated: #6ad39f; //ios
+    display: flex;
+    justify-content: center;
+    align-content: center;
+}
+  
+ion-button:hover{
+--background: #6ad39f; // android
+color: white;
+}

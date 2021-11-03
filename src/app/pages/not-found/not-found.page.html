@@ -1,0 +1,24 @@
+<!-- <ion-header>
+  <ion-toolbar>
+    <ion-title>not-found</ion-title>
+  </ion-toolbar>
+</ion-header> -->
+
+<ion-header class="ion-no-border">
+
+
+  <app-header></app-header>
+</ion-header>
+
+<ion-content class="ion-text-center ion-padding-top ion-padding-bottom">
+    <h1 #animar>Parece que no encontramos lo que buscas...</h1>
+    <!-- colocar marca en el Dom -->
+
+    <div #animar2>
+      <ng-lottie [options]='options'></ng-lottie>
+    </div>
+
+    <ion-button shape="round" fill="outline" (click)="back()">Volver</ion-button>
+
+<!-- class="ion-margin-bottom" -->
+</ion-content>
