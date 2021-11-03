@@ -17,3 +17,41 @@ Crear pages anidadas en carpeta
 ionic g page nombreCarpeta/nombrePagina
 ionic g page pages/login
 ```
+
+-------------------------------------------------------
+
+###### Comandos importantes:
+
+Instalación Ionic
+```
+npm install-g  @ionic/cli
+```
+
+Angular Material
+```
+npm install -g @angular/cli@latest
+ng add @angular/material
+```
+
+Storage Ionic
+```
+npm install @ionic/storage-angular
+```
+
+Lottie (para gráficos animados)
+```
+npm i lottie-web ngx-lottie
+```
+
+Integración Android Studio (sincronizar y levantar)
+```
+npm install @capacitor/android
+npx cap add android
+ionic capacitor sync android
+npx cap open android
+```
+
+En caso de error con capacitor sync android:
+```
+npm install --save @ionic-native/core
+```
