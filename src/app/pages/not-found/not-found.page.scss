@@ -3,6 +3,11 @@ ion-toolbar{
     --border-color: transparent;
 }
 
+.logo{
+    width: 5em;
+    margin-left: 1em ;
+}
+
 ion-content{
     --background:#23c774;
     display: flex;
