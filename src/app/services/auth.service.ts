@@ -6,7 +6,7 @@ import { AttendRecordService } from './attend-record.service';
   providedIn: 'root'
 })
 export class AuthService {
-  private _currentUser: IUsers | null = null;
+  public _currentUser: IUsers | null = null;
 
   constructor(private attendRecord: AttendRecordService) {
     //hacer: ver si existe usuario en local storage y asignarlo a current user
@@ -18,6 +18,8 @@ export class AuthService {
     if (user) {
       this._currentUser = user;
       //hacer: guardar current user en local storage para evitar logear a cada rato
+      let status = {'estado':1, 'user': user};
+      localStorage.setItem("log",JSON.stringify(status));
       return true;
     }
     return false;
@@ -34,4 +36,5 @@ export class AuthService {
   get isAuthenticated() {
     return this._currentUser != null;
   }
+  
 }

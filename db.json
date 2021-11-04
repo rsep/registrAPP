@@ -79,6 +79,16 @@
       "hora": "22:59:31 GMT-0300 (hora de verano de Chile)",
       "userId": 2,
       "id": 8
+    },
+    {
+      "ramo": {
+        "sigla": "PGY4121",
+        "seccion": "007D"
+      },
+      "fecha": "Fri Oct 29 2021",
+      "hora": "00:31:12 GMT-0300 (hora de verano de Chile)",
+      "userId": 2,
+      "id": 9
     }
   ],
   "users": [
