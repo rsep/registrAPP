@@ -1,0 +1,22 @@
+{
+  "usuarios": [
+    { 
+      "user": "rosa.sepulveda",
+      "password": "1111",
+      "nombre": "Rosario Sepúlveda",
+      "email": "rosa.sepulveda@duocuc.cl"
+    },
+    { 
+      "user": "cm.flores",
+      "password": "0000",
+      "nombre": "Camilo Flores",
+      "email": "cm.flores@duocuc.cl"
+	  },
+	  { 
+	    "user": "juan.basso",
+      "password": "1234",
+      "nombre": "Juan",
+	   "email": "juan.basso@duocuc.cl"  
+	  }
+  ]
+}

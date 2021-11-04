@@ -9,9 +9,11 @@ import { AlertController } from '@ionic/angular';
 })
 export class HeaderComponent implements OnInit {
 
+
   constructor(private router: Router, private alertCtrl:AlertController) { }
 
   ngOnInit() {}
+
 
   logout(){
     this.router.navigate(['/login']);
@@ -23,7 +25,9 @@ export class HeaderComponent implements OnInit {
       message:'¿Quieres cerrar sesión?',
       buttons:[{text:'OK', handler: ()=>{this.logout()}},'Cancelar']
     });
+
     await alert.present(); 
+
   };
 
 }
