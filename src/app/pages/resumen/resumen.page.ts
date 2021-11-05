@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
+import { ActivatedRoute, Router, NavigationExtras } from '@angular/router';
 import { AlertController } from '@ionic/angular';
 import { ToastController } from '@ionic/angular';
 import { IAttend } from 'src/app/interfaces/iattend';
@@ -12,9 +12,10 @@ import { AuthService } from 'src/app/services/auth.service';
   templateUrl: './resumen.page.html',
   styleUrls: ['./resumen.page.scss'],
 })
-export class ResumenPage implements OnInit {
+export class ResumenPage {
   
   today = Date.now();
+  data: any; //el que recibe
 
   user: Partial<IUsers>={ };
   asistencia: Partial <IAttend> = {
@@ -26,18 +27,32 @@ export class ResumenPage implements OnInit {
     hora: new Date().toTimeString()
   };
 
-  constructor(private router: Router, private alertCtrl: AlertController, 
+  constructor(private activeRoute: ActivatedRoute, private router: Router, private alertCtrl: AlertController, 
     public toastController: ToastController, private api: AttendRecordService, 
     private authService:AuthService) {
       this.user = this.authService.currentUser;
+      this.activeRoute.queryParams.subscribe(params=>{
+        if(this.router.getCurrentNavigation().extras.state){
+          this.data=this.router.getCurrentNavigation().extras.state.code;
+        }
+      });
+      console.log('RESUMEN PAGE:' + this.data);
      }
 
 
-  ngOnInit() {
+  
+  ionViewWillEnter(){
+    // this.activeRoute.queryParams.subscribe(params=>{
+    //   if(this.router.getCurrentNavigation().extras.state){
+    //     this.data=this.router.getCurrentNavigation().extras.state.code;
+    //   }
+    // });
+    
   }
 
   volver(){
-    this.router.navigate(['/qr']);
+    // this.router.navigate(['/qr']);
+    this.router.navigate(['/home']);
   }
 
   Record(){
