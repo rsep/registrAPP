@@ -22,10 +22,7 @@ export class LoginPage implements OnInit {
 
   constructor(private router: Router, private authService: AuthService, private toastController:ToastController) { }
 
-  ngOnInit() {
-    //hacer: preguntar si hay un usuario autenticado y reenviar a home
-
-  }
+  ngOnInit() {}
 
   // para los formularios
   onSubmitTemplate(){
@@ -34,7 +31,6 @@ export class LoginPage implements OnInit {
   }
 
   // metodo para iniciar sesion
-
   async login(){
     const isLogged = await this.authService.login(this.user.nombre, this.user.password);
     if(isLogged){

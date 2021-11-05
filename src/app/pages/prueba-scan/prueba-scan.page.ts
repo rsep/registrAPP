@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { BarcodeScanner } from '@ionic-native/barcode-scanner/ngx';
+import { BarcodeScanner, BarcodeScannerOptions  } from '@ionic-native/barcode-scanner/ngx';
+
 
 @Component({
   selector: 'app-prueba-scan',
@@ -9,10 +10,17 @@ import { BarcodeScanner } from '@ionic-native/barcode-scanner/ngx';
 export class PruebaScanPage implements OnInit {
   
   code: any;
+
+  scanData : {};
+  options :BarcodeScannerOptions;
+
   constructor(private barcodeScanner: BarcodeScanner) { }
 
-  ngOnInit() {
-  }
+  ngOnInit() {}
+
+  ngAfterViewInit(){}
+
+  ngOnDestroy(){}
 
   scaner(){
     this.barcodeScanner.scan().then(barcodeData => {
@@ -22,4 +30,6 @@ export class PruebaScanPage implements OnInit {
          console.log('Error', err);
      });
   }
+
+
 }
