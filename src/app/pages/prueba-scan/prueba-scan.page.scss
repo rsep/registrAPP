@@ -1,0 +1,42 @@
+ion-toolbar{
+    --background: transparent;
+    --ion-color-base: transparent !important;
+    padding-top: 0 !important;
+}
+
+ion-img.logo{
+    // height: 7em;
+    margin-top: 1em;
+    margin-bottom: 2em;
+}
+
+ion-content.bg{
+    --background: none;
+    background-image: url("../../../assets/img/background3.jpg") ;
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+ion-content{
+    --overflow: hidden; // para esconder scroll
+}
+
+ion-button{
+    --background: #23c774;
+    color: #fff;
+    --border-color: white;
+    height: 3em;
+    --background-hover: #6ad39f; // ios
+    margin-top: 2em;
+}
+.card {     
+    // float: unset !important;
+    background: transparent;
+    box-shadow:none !important
+}
+
+ion-button:hover{
+    --background: #6ad39f; // android
+    color: white;
+}

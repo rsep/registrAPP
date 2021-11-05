@@ -26,18 +26,12 @@ export class ResumenPage implements OnInit {
     hora: new Date().toTimeString()
   };
 
-  
-
-
   constructor(private router: Router, private alertCtrl: AlertController, 
     public toastController: ToastController, private api: AttendRecordService, 
     private authService:AuthService) {
       this.user = this.authService.currentUser;
      }
-//ya esta en components
-  logout(){
-    this.router.navigate(['/login']);
-  }
+
 
   ngOnInit() {
   }
@@ -67,15 +61,7 @@ export class ResumenPage implements OnInit {
       this.presentToast("Ya se encuentra presente")
     }
   }
-  //ya esta en components
-    async showAlert(){
-      const alert = await this.alertCtrl.create({
-        header:'Cerrar Sesión',
-        message:'¿Quieres cerrar sesión?',
-        buttons:[{text:'OK', handler: ()=>{this.logout()}},'Cancelar']
-      });
-      await alert.present(); 
-    };
+
 
     async presentToast(msg:string) {
       const toast = await this.toastController.create({
