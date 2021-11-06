@@ -21,21 +21,18 @@ export class AttendRecordService {
   // apiURL = 'http://192.168.0.7:3000'; // va cambiando ipconfig en cmd
   // apiURL = 'http://192.168.1.100:3000'; // va cambiando ipconfig en cmd
 
-  // apiURL = 'https://rsep.github.io/servicioRegistrAPP';
-  // apiURL = 'https://rsep.github.io/servicioRegistrAPP/db.json';
-  apiURL = 'https://my-json-server.typicode.com/rsep/servicioRegistrAPP';
+  // apiURL = 'https://my-json-server.typicode.com/rsep/servicioRegistrAPP';
+  apiURL = 'https://military-picayune-freighter.glitch.me';
 
   constructor(private http: HttpClient) { }
 
   getRecord(): Observable<IAttend[]> {
-    // return this.http.get<IAttend[]>(this.apiURL + '/asistencia.json').pipe(
     return this.http.get<IAttend[]>(this.apiURL + '/asistencia/').pipe(
       retry(3)
     );
   } 
 
   getUsers(): Observable<IUsers[]> {
-    // return this.http.get<IUsers[]>(this.apiURL + '/users.json').pipe(
     return this.http.get<IUsers[]>(this.apiURL + '/users/').pipe(
       retry(3)
     );
@@ -43,7 +40,6 @@ export class AttendRecordService {
   
   //crear nueva asistencia en el sistema
   createRecord(asistencia: Partial<IAttend>): Observable<any> {
-    // return this.http.post(this.apiURL + '/asistencia.json', asistencia, this.httpOptions).pipe(
     return this.http.post(this.apiURL + '/asistencia', asistencia, this.httpOptions).pipe(
       retry(3)
     );

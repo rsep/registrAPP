@@ -49,10 +49,6 @@ const routes: Routes = [
     canActivate:[AuthGuardService]
   },
   {
-    path: 'prueba-scan',
-    loadChildren: () => import('./pages/prueba-scan/prueba-scan.module').then( m => m.PruebaScanPageModule)
-  },
-  {
     path: '**',
     loadChildren: () => import('./pages/not-found/not-found.module').then( m => m.NotFoundPageModule)
   },

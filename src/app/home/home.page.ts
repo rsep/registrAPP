@@ -29,18 +29,21 @@ export class HomePage {
   // }
 
   scan(){
+    
     this.barcodeScanner.scan().then(barcodeData => {
       this.code = barcodeData.text;
       console.log('Barcode data', this.code);
+
+        let navigationExtras: NavigationExtras={
+          state:{ code: this.code }
+        };
+        this.router.navigate(['/resumen'],navigationExtras)
+
      }).catch(err => {
          console.log('Error', err);
      });
-     if(this.barcodeScanner.scan()){
-      let navigationExtras: NavigationExtras={
-        state:{ code: this.code }
-      };
-      this.router.navigate(['/resumen'],navigationExtras)
-     }
   }
 
+
+  
 }

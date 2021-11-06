@@ -20,8 +20,8 @@ export class ResumenPage {
   user: Partial<IUsers>={ };
   asistencia: Partial <IAttend> = {
     ramo: {
-        sigla: "PGY4121",
-        seccion: "007D"
+        sigla: "",
+        seccion: ""
     },
     fecha: new Date().toDateString(),
     hora: new Date().toTimeString()
@@ -31,27 +31,28 @@ export class ResumenPage {
     public toastController: ToastController, private api: AttendRecordService, 
     private authService:AuthService) {
       this.user = this.authService.currentUser;
+
       this.activeRoute.queryParams.subscribe(params=>{
         if(this.router.getCurrentNavigation().extras.state){
           this.data=this.router.getCurrentNavigation().extras.state.code;
         }
       });
-      console.log('RESUMEN PAGE:' + this.data);
      }
 
 
   
   ionViewWillEnter(){
-    // this.activeRoute.queryParams.subscribe(params=>{
-    //   if(this.router.getCurrentNavigation().extras.state){
-    //     this.data=this.router.getCurrentNavigation().extras.state.code;
-    //   }
-    // });
-    
+    console.log('RESUMEN PAGE:' + this.data);
+    this.asistencia.ramo.sigla = this.data;
+    console.log("EVENTO WILL ENTER");
+  }
+
+
+  ionViewDidEnter(){
+    console.log("EVENTO DID ENTER");
   }
 
   volver(){
-    // this.router.navigate(['/qr']);
     this.router.navigate(['/home']);
   }
 
