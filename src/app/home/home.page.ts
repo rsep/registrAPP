@@ -23,12 +23,21 @@ export class HomePage {
     this.user=authService.currentUser;
   }
 
-  // Verificar ruta al nombre de la página que lee escaner
-  // scan(){
-  //   this.router.navigate(['/qr'])
-  // }
-
   scan(){
+  //   this.code = { 
+  //     "idAsignatura": "PGY4121",
+  //     "seccion": "007D",
+  //     "asignatura": "Programación de Aplicaciones Móviles",
+  //     "docente": "Nancy Bernal",
+  //     "correo": "gudea.red@gmail.cl"
+  // };
+  // // this.code = "hola";
+  //   console.log('JSON EN DURO', this.code);
+
+  //     let navigationExtras: NavigationExtras={
+  //       state:{ code: this.code }
+  //     };  
+  //     this.router.navigate(['/resumen'],navigationExtras)
     
     this.barcodeScanner.scan().then(barcodeData => {
       this.code = barcodeData.text;

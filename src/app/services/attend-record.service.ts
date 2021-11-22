@@ -22,7 +22,9 @@ export class AttendRecordService {
   // apiURL = 'http://192.168.1.100:3000'; // va cambiando ipconfig en cmd
 
   // apiURL = 'https://my-json-server.typicode.com/rsep/servicioRegistrAPP';
-  apiURL = 'https://military-picayune-freighter.glitch.me';
+  // apiURL = 'https://military-picayune-freighter.glitch.me';
+
+  apiURL = 'https://held-abaft-jar.glitch.me/';
 
   constructor(private http: HttpClient) { }
 
