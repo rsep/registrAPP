@@ -16,6 +16,7 @@ export class ResumenPage {
   
   today = Date.now();
   data: any; //el que recibe
+  qr : any;
 
   user: Partial<IUsers>={ };
   asistencia: Partial <IAttend> = {
@@ -34,23 +35,26 @@ export class ResumenPage {
 
       this.activeRoute.queryParams.subscribe(params=>{
         if(this.router.getCurrentNavigation().extras.state){
-          this.data=this.router.getCurrentNavigation().extras.state.code;
+          this.data=JSON.stringify(this.router.getCurrentNavigation().extras.state.code);
+          this.data = JSON.parse(this.data);
+          this.qr = JSON.parse(this.data);
+          console.log(this.qr["seccion"]);
+          console.log("SECCION: " + this.qr["seccion"]);
+          console.log("SIGLA: " + this.qr["idAsignatura"]);
         }
       });
+      
      }
 
-
-  
   ionViewWillEnter(){
-    console.log('RESUMEN PAGE:' + this.data);
-    this.asistencia.ramo.sigla = this.data;
+    this.asistencia.ramo.sigla = this.qr["idAsignatura"];
+    this.asistencia.ramo.seccion = this.qr["seccion"];
     console.log("EVENTO WILL ENTER");
   }
 
-
-  ionViewDidEnter(){
-    console.log("EVENTO DID ENTER");
-  }
+  // ionViewDidEnter(){
+  //   console.log("EVENTO DID ENTER");
+  // }
 
   volver(){
     this.router.navigate(['/home']);
