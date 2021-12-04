@@ -14,8 +14,11 @@
       <li>Carrera: {{user.carrera}}</li>
       <br>
       <!-- <li>Asignatura / Sección: {{data}}</li> -->
-      <li>Asignatura: {{ asistencia.ramo.sigla }}</li>
+      <li>Asignatura: {{ asistencia.asignatura }}</li>
+      <li>idAsignatura: {{ asistencia.ramo.sigla }}</li>
       <li>Sección: {{ asistencia.ramo.seccion }}</li>
+      <li>Docente: {{ asistencia.docente }}</li>
+      <li>Correo: {{ asistencia.correo }}</li>
       <li>Fecha: {{today | date: 'dd/MM/yyyy'}}</li>
       <!--<li>Hora: {{today | date: 'HH:mm'}}</li>-->
     </ul>
