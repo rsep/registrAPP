@@ -43,6 +43,11 @@ Lottie (para gráficos animados)
 npm i lottie-web ngx-lottie
 ```
 
+EmailJS (para envío de mail)
+```
+npm install emailjs-com --save
+```
+
 BarcodeScanner (API nativa) - Capacitor
 ```
 npm install phonegap-plugin-barcodescanner
