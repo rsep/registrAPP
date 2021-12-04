@@ -40,22 +40,6 @@ export class HistorialPage implements OnInit{
 
   ngOnInit() {
   }
-
-  // Alert
-  async showAlert(){
-    const alert = await this.alertCtrl.create({
-      header:'Cerrar Sesión',
-      message:'¿Quieres cerrar sesión?',
-      buttons:[{text:'OK', handler: ()=>{this.logout()}},'Cancelar']
-    });
-    await alert.present();
-
-    
-  };
-
-  logout(){
-    this.router.navigate(['/login'])
-  };
   
   volver(){
     this.router.navigate(['/resumen']);

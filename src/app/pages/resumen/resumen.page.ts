@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
+import { ActivatedRoute, Router, NavigationExtras } from '@angular/router';
 import { AlertController } from '@ionic/angular';
 import { ToastController } from '@ionic/angular';
 import { IAttend } from 'src/app/interfaces/iattend';
@@ -12,38 +12,52 @@ import { AuthService } from 'src/app/services/auth.service';
   templateUrl: './resumen.page.html',
   styleUrls: ['./resumen.page.scss'],
 })
-export class ResumenPage implements OnInit {
+export class ResumenPage {
   
   today = Date.now();
+  data: any; //el que recibe
+  qr : any;
 
   user: Partial<IUsers>={ };
   asistencia: Partial <IAttend> = {
     ramo: {
-        sigla: "PGY4121",
-        seccion: "007D"
+        sigla: "",
+        seccion: ""
     },
     fecha: new Date().toDateString(),
     hora: new Date().toTimeString()
   };
 
-  
-
-
-  constructor(private router: Router, private alertCtrl: AlertController, 
+  constructor(private activeRoute: ActivatedRoute, private router: Router, private alertCtrl: AlertController, 
     public toastController: ToastController, private api: AttendRecordService, 
     private authService:AuthService) {
       this.user = this.authService.currentUser;
+
+      this.activeRoute.queryParams.subscribe(params=>{
+        if(this.router.getCurrentNavigation().extras.state){
+          this.data=JSON.stringify(this.router.getCurrentNavigation().extras.state.code);
+          this.data = JSON.parse(this.data);
+          this.qr = JSON.parse(this.data);
+          console.log(this.qr["seccion"]);
+          console.log("SECCION: " + this.qr["seccion"]);
+          console.log("SIGLA: " + this.qr["idAsignatura"]);
+        }
+      });
+      
      }
-//ya esta en components
-  logout(){
-    this.router.navigate(['/login']);
+
+  ionViewWillEnter(){
+    this.asistencia.ramo.sigla = this.qr["idAsignatura"];
+    this.asistencia.ramo.seccion = this.qr["seccion"];
+    console.log("EVENTO WILL ENTER");
   }
 
-  ngOnInit() {
-  }
+  // ionViewDidEnter(){
+  //   console.log("EVENTO DID ENTER");
+  // }
 
   volver(){
-    this.router.navigate(['/qr']);
+    this.router.navigate(['/home']);
   }
 
   Record(){
@@ -67,15 +81,7 @@ export class ResumenPage implements OnInit {
       this.presentToast("Ya se encuentra presente")
     }
   }
-  //ya esta en components
-    async showAlert(){
-      const alert = await this.alertCtrl.create({
-        header:'Cerrar Sesión',
-        message:'¿Quieres cerrar sesión?',
-        buttons:[{text:'OK', handler: ()=>{this.logout()}},'Cancelar']
-      });
-      await alert.present(); 
-    };
+
 
     async presentToast(msg:string) {
       const toast = await this.toastController.create({
