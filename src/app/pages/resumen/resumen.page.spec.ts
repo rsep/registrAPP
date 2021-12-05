@@ -1,5 +1,6 @@
 import { ComponentFixture, TestBed, waitForAsync } from '@angular/core/testing';
 import { IonicModule } from '@ionic/angular';
+// import { ActivatedRoute } from '@angular/router';
 
 import { ResumenPage } from './resumen.page';
 
