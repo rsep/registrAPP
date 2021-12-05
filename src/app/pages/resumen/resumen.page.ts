@@ -6,6 +6,7 @@ import { IAttend } from 'src/app/interfaces/iattend';
 import { IUsers } from 'src/app/interfaces/iusers';
 import { AttendRecordService } from 'src/app/services/attend-record.service';
 import { AuthService } from 'src/app/services/auth.service';
+import emailjs, { EmailJSResponseStatus } from 'emailjs-com';
 
 @Component({
   selector: 'app-resumen',
@@ -20,13 +21,17 @@ export class ResumenPage {
 
   user: Partial<IUsers>={ };
   asistencia: Partial <IAttend> = {
+    asignatura: "",
     ramo: {
         sigla: "",
         seccion: ""
     },
+    docente: "",
+    correo: "",
     fecha: new Date().toDateString(),
     hora: new Date().toTimeString()
   };
+
 
   constructor(private activeRoute: ActivatedRoute, private router: Router, private alertCtrl: AlertController, 
     public toastController: ToastController, private api: AttendRecordService, 
@@ -47,8 +52,11 @@ export class ResumenPage {
      }
 
   ionViewWillEnter(){
+    this.asistencia.asignatura = this.qr["asignatura"];
     this.asistencia.ramo.sigla = this.qr["idAsignatura"];
     this.asistencia.ramo.seccion = this.qr["seccion"];
+    this.asistencia.docente = this.qr["docente"];
+    this.asistencia.correo = this.qr["correo"];
     console.log("EVENTO WILL ENTER");
   }
 
@@ -64,6 +72,7 @@ export class ResumenPage {
     this.router.navigate(['/historial']);
   }
 
+
   confirmAttend(){
     if (this.asistencia.id==null){
       this.asistencia.userId = this.user?.id;
@@ -77,6 +86,16 @@ export class ResumenPage {
           this.presentToast("Error - " + error)
         }
       );
+      //mandar mail automatico
+      const templateParams = {
+        from_name: 'Camilo Flores + Rosario Sepulveda TEAM',
+        to_name: this.qr["docente"],
+        message: 'Evaluacion 3 prueba',
+        el_mail: this.qr["correo"],
+        fecha: new Date().toDateString(),
+        hora: new Date().toTimeString()
+      };
+      emailjs.send("tentacles.mind@gmail.com", "template_1", templateParams, "user_7zZ871sca4dKRPFM4PD4m");
     }else {
       this.presentToast("Ya se encuentra presente")
     }
