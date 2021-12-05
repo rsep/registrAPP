@@ -7,7 +7,7 @@
   <ion-content>
     <div><img src="../assets/img/logo_solo.png" class="logoapp"></div>
   <div>
-        <h1 style="text-transform: capitalize;">¡Hola! {{ user.nombre || 'Usuario_x'}}</h1>
+        <h1 id="saludo" style="text-transform: capitalize;">¡Hola! {{ user?.nombre || 'Usuario_x'}}</h1>
     <div>
       <p>
         Para confirmar tu asistencia
@@ -21,6 +21,10 @@
 <ion-button shape="round" fill="outline" (click)="scan()">
   Escanear
 </ion-button>
+
+<div class="enlace ion-text-center">
+  <a [routerLink]="['/recuperacions']">¿Necesitas ayuda?</a>
+</div>
 
 
 </ion-content>
