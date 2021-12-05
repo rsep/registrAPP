@@ -1,5 +1,6 @@
 import { ComponentFixture, TestBed, waitForAsync } from '@angular/core/testing';
 import { IonicModule } from '@ionic/angular';
+import { AppRoutingModule } from 'src/app/app-routing.module';
 
 import { QRPage } from './qr.page';
 
@@ -10,7 +11,7 @@ describe('QRPage', () => {
   beforeEach(waitForAsync(() => {
     TestBed.configureTestingModule({
       declarations: [ QRPage ],
-      imports: [IonicModule.forRoot()]
+      imports: [IonicModule.forRoot(), AppRoutingModule]
     }).compileComponents();
 
     fixture = TestBed.createComponent(QRPage);

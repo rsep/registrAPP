@@ -1,4 +1,4 @@
-// @ts-check
+// @ts-nocheck
 // Protractor configuration file, see link for more information
 // https://github.com/angular/protractor/blob/master/lib/config.ts
 
@@ -24,14 +24,11 @@ exports.config = {
     defaultTimeoutInterval: 30000,
     print: function() {}
   },
-  onPrepare() {
+  onPrepare: async () => {
     require('ts-node').register({
       project: require('path').join(__dirname, './tsconfig.json')
     });
-    jasmine.getEnv().addReporter(new SpecReporter({
-      spec: {
-        displayStacktrace: StacktraceOption.PRETTY
-      }
-    }));
+    jasmine.getEnv().addReporter(new SpecReporter({ spec: { displayStacktrace: true  }  }));
+    await browser.waitForAngularEnabled(false);
   }
 };

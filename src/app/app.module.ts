@@ -15,12 +15,15 @@ import { IonicStorageModule } from '@ionic/storage-angular'; //storage para logi
 
 import { BarcodeScanner } from '@ionic-native/barcode-scanner/ngx';
 
+import { FormsModule } from '@angular/forms';
+
+
 @NgModule({
   declarations: [AppComponent],
   entryComponents: [],
 
   imports: [BrowserModule, IonicModule.forRoot(), AppRoutingModule, 
-    BrowserAnimationsModule, HttpClientModule,IonicStorageModule.forRoot()],
+    BrowserAnimationsModule, HttpClientModule, FormsModule, IonicStorageModule.forRoot()],
 
   providers: [ BarcodeScanner, { provide: RouteReuseStrategy, useClass: IonicRouteStrategy }],
   bootstrap: [AppComponent],
